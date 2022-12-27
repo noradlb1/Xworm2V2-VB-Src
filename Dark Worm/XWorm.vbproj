@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2A8103A-2C24-4F98-8614-22F20D63E0EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>XWorm.My.MyApplication</StartupObject>
+    <RootNamespace>XWorm</RootNamespace>
+    <AssemblyName>XWorm</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>XWorm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>XWorm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>images.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastColoredTextBox, Version=2.16.24.0, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
+      <HintPath>..\packages\FCTB.2.16.24\lib\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IconExtractor, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IconExtractor.1.0.1\lib\net40\IconExtractor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.1.0\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.1.0\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.1.0\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.1.0\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.1.0\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.1.0\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.1.0\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binderdom.vb" />
+    <Compile Include="EXEICO.vb" />
+    <Compile Include="Forms\About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ACT.Designer.vb">
+      <DependentUpon>ACT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ACT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="check.vb" />
+    <Compile Include="Forms\BlockClients.Designer.vb">
+      <DependentUpon>BlockClients.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BlockClients.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chat.Designer.vb">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Downloader.Designer.vb">
+      <DependentUpon>Downloader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Downloader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileSeacher.Designer.vb">
+      <DependentUpon>FileSeacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileSeacher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FM.Designer.vb">
+      <DependentUpon>FM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Binder.Designer.vb">
+      <DependentUpon>Binder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Binder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Builder.Designer.vb">
+      <DependentUpon>Builder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Builder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CB.Designer.vb">
+      <DependentUpon>CB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DDos.Designer.vb">
+      <DependentUpon>DDos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DDos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Fun.Designer.vb">
+      <DependentUpon>Fun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Fun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HRDPST.Designer.vb">
+      <DependentUpon>HRDPST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HRDPST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IconChanger.Designer.vb">
+      <DependentUpon>IconChanger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IconChanger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\INFO.Designer.vb">
+      <DependentUpon>INFO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\INFO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Keylogger.Designer.vb">
+      <DependentUpon>Keylogger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Keylogger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maps.Designer.vb">
+      <DependentUpon>Maps.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maps.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MIC.Designer.vb">
+      <DependentUpon>MIC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MIC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ngrok.Designer.vb">
+      <DependentUpon>ngrok.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ngrok.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PassR.Designer.vb">
+      <DependentUpon>PassR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PassR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Port.Designer.vb">
+      <DependentUpon>Port.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Port.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcessV.Designer.vb">
+      <DependentUpon>ProcessV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcessV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Programs.Designer.vb">
+      <DependentUpon>Programs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Programs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ransomware.Designer.vb">
+      <DependentUpon>Ransomware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ransomware.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoteDesktop.Designer.vb">
+      <DependentUpon>RemoteDesktop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemoteDesktop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RunPE.Designer.vb">
+      <DependentUpon>RunPE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RunPE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Script.Designer.vb">
+      <DependentUpon>Script.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Script.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sound.Designer.vb">
+      <DependentUpon>Sound.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sound.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TcpConnectionForm.Designer.vb">
+      <DependentUpon>TcpConnectionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TcpConnectionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TEST.Designer.vb">
+      <DependentUpon>TEST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TEST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TXT.Designer.vb">
+      <DependentUpon>TXT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TXT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VBCode.Designer.vb">
+      <DependentUpon>VBCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VBCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebCam.Designer.vb">
+      <DependentUpon>WebCam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebCam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeoIP.vb" />
+    <Compile Include="HashG.vb" />
+    <Compile Include="Helper.vb" />
+    <Compile Include="icon.vb" />
+    <Compile Include="LV.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Networking\Client.vb" />
+    <Compile Include="Networking\Server.vb" />
+    <Compile Include="Requests\Messages.vb" />
+    <Compile Include="Requests\Scheduler.vb" />
+    <None Include="packages.config" />
+    <None Include="Resources\code.vb" />
+    <Compile Include="Settings.vb" />
+    <None Include="Resources\Fixer.bat" />
+    <None Include="Resources\Intro" />
+    <None Include="Resources\Stub.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ACT.resx">
+      <DependentUpon>ACT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BlockClients.resx">
+      <DependentUpon>BlockClients.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chat.resx">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Downloader.resx">
+      <DependentUpon>Downloader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileSeacher.resx">
+      <DependentUpon>FileSeacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FM.resx">
+      <DependentUpon>FM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Binder.resx">
+      <DependentUpon>Binder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Builder.resx">
+      <DependentUpon>Builder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CB.resx">
+      <DependentUpon>CB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DDos.resx">
+      <DependentUpon>DDos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Fun.resx">
+      <DependentUpon>Fun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HRDPST.resx">
+      <DependentUpon>HRDPST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IconChanger.resx">
+      <DependentUpon>IconChanger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\INFO.resx">
+      <DependentUpon>INFO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Keylogger.resx">
+      <DependentUpon>Keylogger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maps.resx">
+      <DependentUpon>Maps.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MIC.resx">
+      <DependentUpon>MIC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ngrok.resx">
+      <DependentUpon>ngrok.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PassR.resx">
+      <DependentUpon>PassR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Port.resx">
+      <DependentUpon>Port.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcessV.resx">
+      <DependentUpon>ProcessV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Programs.resx">
+      <DependentUpon>Programs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ransomware.resx">
+      <DependentUpon>Ransomware.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoteDesktop.resx">
+      <DependentUpon>RemoteDesktop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RunPE.resx">
+      <DependentUpon>RunPE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Script.resx">
+      <DependentUpon>Script.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sound.resx">
+      <DependentUpon>Sound.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TcpConnectionForm.resx">
+      <DependentUpon>TcpConnectionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TEST.resx">
+      <DependentUpon>TEST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TXT.resx">
+      <DependentUpon>TXT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VBCode.resx">
+      <DependentUpon>VBCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebCam.resx">
+      <DependentUpon>WebCam.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images.ico" />
+    <None Include="Resources\ddddddddddddd.png" />
+    <None Include="Resources\ssssss.png" />
+    <None Include="Resources\black-stop-icon-26.png" />
+    <None Include="Resources\play-icon-png-transparent-28.png" />
+    <None Include="Resources\Path.png" />
+    <None Include="Resources\gps.png" />
+    <None Include="Resources\744976.png" />
+    <None Include="Resources\vbs.txt" />
+    <None Include="Resources\wsf.txt" />
+    <None Include="Resources\js.txt" />
+    <None Include="Resources\Internet-Explorer-PNG-Background.png" />
+    <None Include="Resources\xhvnc.png" />
+    <None Include="Resources\XHVNC.jpg" />
+    <None Include="Resources\soundd.png" />
+    <None Include="Resources\img_190852.png" />
+    <None Include="Resources\chat-121.png" />
+    <None Include="Resources\MIC.png" />
+    <None Include="Resources\img_248030.png" />
+    <None Include="Resources\img_233156.png" />
+    <None Include="Resources\828158_check_512x512.png" />
+    <None Include="Resources\unnamed2.png" />
+    <None Include="Resources\exclamation-mark-2.png" />
+    <None Include="Resources\installation-symbol.png" />
+    <None Include="Resources\img_433216.png" />
+    <None Include="Resources\HTA.txt" />
+    <None Include="Resources\573961.png" />
+    <None Include="Resources\ST.png" />
+    <None Include="Resources\101783.png" />
+    <None Include="Resources\img_139106.png" />
+    <None Include="Resources\387-3870193_message-clipart-letter-post-icon-email-unread-png.png" />
+    <None Include="Resources\wifi.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\img_433315.png" />
+    <None Include="Resources\discord-black-icon-1.png" />
+    <None Include="Resources\171482_bookmark_icon %282%29.png" />
+    <None Include="Resources\password-reset.png" />
+    <None Include="Resources\PngItem_5510505.png" />
+    <None Include="Resources\2089742.png" />
+    <None Include="Resources\unnamed1.png" />
+    <None Include="Resources\virus_PNG35.png" />
+    <None Include="Resources\active-search.png" />
+    <None Include="Resources\msg.png" />
+    <None Include="Resources\005071cbf1fdd17673607ecd7b7e88f6.png" />
+    <None Include="Resources\windows-10_icon-icons.com_66166.png" />
+    <None Include="Resources\img_487535.png" />
+    <None Include="Resources\48857.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\cam.png" />
+    <None Include="Resources\unlock-icon-0.png" />
+    <None Include="Resources\unlock-icon-0 copy.png" />
+    <None Include="Resources\sound-play-sound.png" />
+    <None Include="Resources\install-software-download.png" />
+    <None Include="Resources\Editing-Paste-icon.png" />
+    <None Include="Resources\6622123_preview.png" />
+    <None Include="Resources\file-icon-png-23.png" />
+    <None Include="Resources\archive-rar-extract-zip-file-data-diocument-secure-31759.png" />
+    <None Include="Resources\62107.png" />
+    <None Include="Resources\28814.png" />
+    <None Include="Resources\imageee.png" />
+    <None Include="Resources\filemang.png" />
+    <None Include="Resources\hideeeeee.png" />
+    <None Include="Resources\newfolder.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\delllll.png" />
+    <None Include="Resources\renm.png" />
+    <None Include="Resources\runnn.png" />
+    <None Include="Resources\tex.png" />
+    <None Include="Resources\baccc.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\set.png" />
+    <None Include="Resources\get.png" />
+    <None Include="Resources\cb.png" />
+    <None Include="Resources\img_395236.png" />
+    <None Include="Resources\reeeeeee.png" />
+    <None Include="Resources\kkkk.png" />
+    <None Include="Resources\re1.png" />
+    <None Include="Resources\processss.png" />
+    <None Include="Resources\cmd.png" />
+    <None Include="Resources\monitor_sleep.png" />
+    <None Include="Resources\no.png" />
+    <None Include="Resources\yes.png" />
+    <None Include="Resources\00.png" />
+    <None Include="Resources\b.png" />
+    <None Include="Resources\del.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\Files-320x320.png" />
+    <None Include="Resources\unnamed.png" />
+    <None Include="Resources\ZEC_color.png" />
+    <None Include="Resources\BCH_color.png" />
+    <None Include="Resources\DASH_color.png" />
+    <None Include="Resources\DOGE_color.png" />
+    <None Include="Resources\LTC_color.png" />
+    <None Include="Resources\XMR_color.png" />
+    <None Include="Resources\ETH_color.png" />
+    <None Include="Resources\BTC_color.png" />
+    <None Include="Resources\Icon-intra-bank-transfer.png" />
+    <None Include="Resources\maps.png" />
+    <None Include="Resources\st2.png" />
+    <None Include="Resources\sleep.png" />
+    <None Include="Resources\v.png" />
+    <None Include="Resources\showwww.png" />
+    <None Include="Resources\admin.png" />
+    <None Include="Resources\uac.png" />
+    <None Include="Resources\vvv.png" />
+    <None Include="Resources\++.png" />
+    <None Include="Resources\sf.png" />
+    <None Include="Resources\logooff.png" />
+    <None Include="Resources\greendot.png" />
+    <None Include="Resources\reddot.png" />
+    <None Include="Resources\kill.png" />
+    <None Include="Resources\power.png" />
+    <None Include="Resources\cmdd.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\url.png" />
+    <None Include="Resources\infooo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

